@@ -1,0 +1,179 @@
+
+Testing Frameworks and Tools
+
+ xUnit FrameWorks
+
+SUnit (Smalltalk) → JUnit(Java)
+
+User Interface Framworks
+
+Selenium
+Watir
+Cypress.io
+VSC Visual Studio Coded UI test
+ Test Studio (Telerik)
+Silk Test (Micro Focus)
+
+Testing Concepts
+
+you have an individual test and Before/After hooks that run around every single test. You also have test suites that are a logical group of tests with Before and After hooks that run once around every single test suite, very basic and very straightforward.
+
+Test Before and After test
+Test Suite Before and After suite
+
+Verification Concepts- Asserts
+Examples
+Assert.thatIsTrue()
+Assert.thatIsFalse()
+ Assert.thatIsNull()
+ Assert.AreEqual()
+Assert.contains()
+
+Test execution involves a test runner
+
+ Some test runners run Synchronous (One at a time) or Asynchronous (In parallel)
+
+Test isolation is good it allows you to work with one code at a time
+
+Insights from testing thumbs up or thumbs down
+
+Dependency Injection
+
+What is dependency Injection and what does their mechanisms look like?
+ and software engineering, dependency injection is a technique whereby one object supplies the dependencies of another object
+ a dependency is an object that can be used
+An injection is the passing of a dependency to a dependent object that would use it
+
+Constructor(or Method)  injection
+- providing dependencies through a class Constructor or method
+
+ property/setter injection
+ using a property or setter method to inject a dependency
+
+Is dependency injection only for object-oriented programming?
+In OOP, DI typically involves injecting instances of dependent classes into an object, which promotes flexibility and makes unit testing easier.
+
+
+
+Trade-Offs of Dependency Injections
+
+Self-contained - code easier to understand harder to test
+
+Dependency - injected code -  harder  to understand but easier to test
+
+Test Doubles
+
+What is a test double?
+
+ test double is a “ generic term for any kind of pretend object used in place of a real object for testing purposes”
+
+Kind of like identical twins
+
+Types of test doubles -  stubs  and mocks are the most common with Fakes and spies being less common
+
+Stubbs-” Provides canned answers to calls made during the test”
+
+Mocks- A stronger Stubb “Pre-programmed with expectations which form a specification to be verified”
+
+Testing best practices
+
+Treat test code like production code
+
+ write readable and maintainable test code
+
+Address both positive and negative test case
+
+Separate common setup and tear down logic
+
+Focus only on necessary values and results
+
+Review test and test practices with  a team
+
+ effective techniques
+
+Catching bad habits
+
+Discuss common challenges
+
+Leave the code better than you found it
+
+Testing Anti patterns
+
+ anti-patterns: dependencies between tests
+
+Test ordering- The order of tests should not matter
+
+Cascading failures- cascading failures can be difficult to track down
+
+Execution- test should work regardless of Serial versus parallel execution
+
+ Anti-pattern colon testing implications details
+
+ focus on the “ what”, not the “how”
+
+ testing the “how”  leads to brittle code when refracturing
+
+Anti-pattern: long-running test
+
+Warning sign that code might be too coupled
+
+Warning sign that the code might not be very testable
+
+
+Limitations of test-driven development
+
+Possible to have holes in the test
+Tdd is not sufficient by itself
+
+Manager support is vital
+
+Common questions
+
+Is agile required for Tdd?
+
+TD signs within an agile process
+
+Requires verification  regression catching and lower maintenance cost
+
+Do I need to write a test first?
+
+Yes because it avoids over-engineering gives you momentum and gain confidence
+
+Tdd is about delivering value
+
+Is test-driven development all I need?
+
+Core web vitals
+
+“ core web vitals include metrics as well as Target thresholds for each metric which help Developers qualitatively understand whether the experience of their site is quote on quote “good” “Needs Improvement” or comma is “poor”
+
+LCP- largest contentful paint- loading
+
+ fid- first input delay- interactivity
+
+CLS- cumulative Layout shift- visual stability
+
+Performance is important!
+
+Is my production software behaving and what test do I need to do to make sure it is
+
+The two most common types of testing or synthetic monitoring and Chaos  engineering
+
+Chaos engineering- can we tolerate different types of failures
+
+ resource exhaustion
+
+ long latencies
+
+ machine failure
+
+With chaos engineering, we can build more resilient systems to catch bugs bottlenecks and design flaws
+
+
+Is my software secure?
+
+One way we can test this is through penetration testing
+
+These tests are used to simulate attacks and to find out any software vulnerabilities to get to user data
+
+Is test-driven development all I need?  No!

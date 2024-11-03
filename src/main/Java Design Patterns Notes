@@ -221,7 +221,7 @@ No Summary :shrug:
    object per command
   Command interface
    execute method
-   unexecute method
+   unexecuted method
    Reflection
    command, and involker, concrete command
 
