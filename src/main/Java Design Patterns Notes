@@ -1,0 +1,365 @@
+
+------------------Singleton Pattern---------------------
+
+Concepts
+Only one instance created
+Guarantees control of a resource
+Lazily loaded
+Examples Runtime,Logger,Spring Beans,Graphic Managers
+
+Pitfalls
+Often overused
+if not careful not thread safe
+confused with factory
+Prototype
+
+Summary
+
+Guarantee one instance
+Easy to implement
+Solves a well defined problem
+consider Factory if Singleton doesn't fit
+
+------------------Builder Pattern----------------
+
+Concepts
+Handles complex constructors
+large number of parameters
+immutability
+examples are string-builder,document-builder,locale-builder
+
+
+Pitfalls
+Immutable
+Static inner class
+Designed first
+Complexity
+Method returns an object
+
+Summary
+Creative way to deal with complexity
+easy to implement
+few drawbacks
+can be refactored in a separate class
+
+
+--------------Prototype Pattern------------------
+Concepts
+Avoids costly creation
+Doesn't normally use new
+Often utilizes an interface
+Usually implemented with a registry
+
+Example Java.lang.object# clone();
+
+Pitfalls
+Not always clear when to use
+used with other patterns
+registry
+shallow vs deep copy
+
+Summary
+Guarantee unique instance
+Often refactored in
+Can help with performance issues
+Don't always jump to a factory
+
+------------------Factory------------------
+Concepts
+Doesn't expose instantiation logic
+Defer to subclasses
+Common interface
+Specified by architecture implemented by user
+Example calendar,resource bundles,number format
+
+Pitfalls
+Complexity
+Creation in subclasses
+Refactoring
+
+Summary
+Parameter driven
+Solves complex creations
+A little more complex
+Opposite of a Singleton
+
+----------------Abstract Factory---------------
+Concepts
+
+Factories of factories
+Factory of related objects
+Common interfaces
+Defer to subclasses
+Example document-writer
+
+
+Design
+Group factories together
+Factory is responsible for life cycle
+Common interface
+Concrete classes
+Parameterized create method
+Composition
+
+Pitfalls
+Complexity
+Runtime switch
+Pattern within a pattern
+Problem specific
+Starts as a Factory
+
+Summary
+
+Group of similar factories
+Complex
+Heavy abstraction
+Framework Pattern
+
+
+--------------------------------Structural : Adapter, Decorator, Facade and Proxy----------------------------
+
+---------------------------Adapter--------------------
+Concepts
+Plug adapter
+Covert to another interface
+Legacy
+Translate requests
+Client,Adapter,Adaptee
+Array --> Lists
+Streams
+
+Array as List method that is an adapter to covert an array of something into a list from collections frame work letting you use list based methods on it
+
+Pitfalls
+Don't complicate
+Multiple adapters
+Don't add functionality
+
+Summary
+Simple Solution
+Easy to implement
+Integrate with legacy/Existing code
+
+Decorator pattern
+Design
+Also called a wrapper
+Add behavior without affecting others
+More than just Inheritance
+Single responsibility principal
+Compose behavior dynamically
+
+Examples Java.io.stream Java.io.Collections #checkedlist
+
+Decorator pattern Design uml
+Inheritance based
+Utilizes composition and inheritance (IS-A,Has-A)
+Alternative to subclassing
+The constructor requires instance from the hierarchy
+
+Decorator pattern pitfalls
+ A new class for every feature added
+ multiple little objects
+ often confused with  simple inheritance
+
+No Summary :shrug:
+
+-----------------Facade pattern----------------------
+ Concepts
+ Easier API usage new line reduce external dependencies
+ Simplified interface
+ Typically refactoring pattern
+ Examples java.net.url
+
+ Design
+ Class that utilizes composition
+ Should it need inheritance
+ Typically encompasses full life cycle
+
+ Pitfalls
+ Typically used to clean up code
+ Should think about API design
+ Flat problem/structure
+ The Singleton of structural patterns often misused
+
+ Summary
+ Simplifies client interface
+ Easy pattern to implement
+ Refactoring pattern
+
+ -----------------Proxy pattern---------------------------
+ Concepts
+ Interface by wrapping
+ Can add functionality
+ Security, simplicity, remote, cost
+ Proxy called to access real object
+  Examples
+ Java.lang.reflect.proxy  java.rmi*
+
+ Proxy  pitfalls
+  only one proxy
+  another abstraction
+  similar to other pattern
+
+  Proxy summary
+
+  great utilities built into Java
+  only one instance
+  used by DlJ/loc Frameworks
+
+  ---------------Command Pattern-------------------
+
+   Concepts
+   encapsulated requests as an object
+   object-oriented callback
+   the coupler sender from processor
+   often used for undue functionality
+   Examples
+   java.lang. Runnable
+   JavaX.swing.action
+
+  Design
+   object per command
+  Command interface
+   execute method
+   unexecute method
+   Reflection
+   command, and involker, concrete command
+
+   Pitfalls
+   dependence on other patterns
+   multiple commands
+   make use of memento
+   prototype for copies
+
+   Summary
+    encapsulate each request as an object
+   Decouple  sender from processor
+   very few drawbacks
+   often used for undo functionality
+
+---------------------Iterator Pattern--------------------------------
+
+Concepts
+ to visit and process each element or node such as a loop or index a container
+
+ doesn't expose the underlying structure
+ Decouples  algorithms
+ sequential - 1, 2, 3,
+ Examples  Java. util.iterator java. util..enumeration
+
+ Design
+
+ Interface-based
+ Factory  method based
+ independent. but fails fast
+ enumerators are fail-safe
+Iterator, concrete iterator
+
+ Pitfalls
+
+ access to index
+ one directional
+ speed/efficiency
+
+ Summary
+ efficient way to Traverse
+ simplify client
+ for each
+
+ -----------------Strategy pattern--------------------
+
+  Concepts
+
+  eliminate conditional statements
+  behavior encapsulated in class
+  difficult to add new strategies
+  client aware of strategy
+  example - comparator
+
+  Design
+
+  abstract Base Class
+  concrete class per strategy
+  removes large if else conditionals also known as nested if else's
+  strategies are independent
+ Contacts strategy concrete strategy
+
+  Pitfalls
+  client aware of strategies
+  increase number of classes
+
+  Summary
+  externalizes algorithms
+ client needs to know different strategies
+  class per strategy
+  reduces conditional statements
+
+-----------------------Observer ----------------------
+
+   Concepts
+   one to many
+   Decoupled
+   event handling
+   pub/sub  publisher/subscriber
+   MVC - where the view is event driven
+   example Observer - event listener - .JMS.Topic
+
+  Design
+   Subject
+   Observer
+   Observable
+   subject, concrete subject, observer, concrete Observer
+
+   Pitfalls
+   unexpected updates
+   large size consequences
+   can be difficult to figure out what changed
+   which makes debugging difficult
+
+   Summary
+   decoupled communication
+   built-in functionality
+   used with mediator
+
+ -----------------State------------------------
+
+  Concepts
+
+  localized State Behavior
+  State object
+  separates what from where
+  Ocp
+  Examples  not applicable some debate JSF or iterator
+
+  Design
+  abstract classes / interface
+  class based
+  contacts unaware
+  contacts, state, concrete state
+
+ Summary
+
+  simplifying cyclomatic complexity
+
+  fancy for large  if else’s or  else if’s
+
+  adding additional States made easier
+
+  more classes
+  similar implications to strategy
+
+  Pitfalls
+  keep logic out of context
+  need to know States
+  state changes
+  more classes
+  a lot of copy and paste errors
+
+
+
+
+
+
+
+
+
