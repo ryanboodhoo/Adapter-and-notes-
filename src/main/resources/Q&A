@@ -1,0 +1,24 @@
+ 1. What is the Adapter Pattern?
+ It’s a design pattern that lets you make two things work together, even if they’re not naturally compatible. Think of it as a "translator" that converts one language (or interface) into another.
+
+ 2. Why do we use the Adapter Pattern?
+ Sometimes, we want to use existing code or libraries, but they don’t fit with our current code. The Adapter Pattern allows us to use them without changing the original code.
+
+ 3. Key Parts of the Adapter Pattern:
+ Target: The interface or format your code expects.
+ Adaptee: The class or library you want to use but doesn’t match your code’s expectations.
+ Adapter: The “middleman” that translates between the Adaptee and Target so they can work together.
+
+ 4. Difference Between Adapter and Facade:
+ Adapter: Helps two specific classes work together by making one “fit” the other.
+ Facade: Simplifies access to a whole system, giving an easy-to-use interface for complex code.
+
+ 5. Real-World Example:
+ Power Plug Adapter: When traveling, you may need an adapter to plug your device into a different country’s socket. The adapter doesn’t change your device but lets it connect to a different socket type.
+
+ 6. Why is the Adapter Pattern Useful?
+ Reusability: You can use existing code with new code without changing it.
+ Flexibility: If you need more adapters in the future, you can easily create them without rewriting the whole system.
+
+ 7. Example in Java:
+ Arrays.asList(array) in Java lets you treat an array like a List by adapting it, allowing you to use List methods on array data.
